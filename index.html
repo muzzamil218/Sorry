@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Professional Sorry Message">
+    <title>SORRY - Apology Card</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main Background -->
+    <div class="background"></div>
+    
+    <!-- Background Scattered SORRY Texts -->
+    <div class="background-sorries" id="backgroundSorries"></div>
+    
+    <!-- Large SORRY Text Overlay -->
+    <div class="sorry-overlay">
+        <h1 class="large-sorry">SORRY</h1>
+        <p class="sorry-subtitle">I sincerely apologize</p>
+    </div>
+    
+    <main class="wrapper">
+        <div class="card-container">
+            <!-- Envelope -->
+            <div class="envelope-wrapper">
+                <div class="envelope">
+                    <div class="envelope-back"></div>
+                    <div class="envelope-flap"></div>
+                    <div class="envelope-front"></div>
+                </div>
+            </div>
+
+            <!-- Card -->
+            <div class="card">
+                <div class="card-inner">
+                    <div class="card-border"></div>
+                    
+                    <!-- Message -->
+                    <div class="message-container">
+                        <p class="message-line line-1">I am</p>
+                        <h1 class="sorry-text">SORRY</h1>
+                        <p class="message-line line-2">Sincerely</p>
+                        <div class="hearts">
+                            <span class="heart">💛</span>
+                            <span class="heart">💙</span>
+                            <span class="heart">💜</span>
+                        </div>
+                    </div>
+
+                    <!-- Main Emoji -->
+                    <div class="main-emoji">😔</div>
+                </div>
+            </div>
+
+            <!-- Flying Emojis -->
+            <div class="floating-container">
+                <div class="float-emoji emoji-1">😔</div>
+                <div class="float-emoji emoji-2">😢</div>
+                <div class="float-emoji emoji-3">😔</div>
+                <div class="float-emoji emoji-4">😢</div>
+                <div class="float-emoji emoji-5">😔</div>
+                <div class="float-emoji emoji-6">😢</div>
+            </div>
+
+            <!-- Shadow -->
+            <div class="shadow"></div>
+        </div>
+
+        <!-- Hint Text -->
+        <p class="hint">A sincere apology</p>
+    </main>
+
+    <script>
+        // Generate background SORRY texts
+        const container = document.getElementById('backgroundSorries');
+        const sorryCount = 120;
+        
+        for (let i = 0; i < sorryCount; i++) {
+            const sorry = document.createElement('div');
+            sorry.className = 'sorry-text-bg';
+            
+            // Random position
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            
+            // Random size (between 15px and 50px)
+            const size = Math.random() * 35 + 15;
+            
+            // Random opacity (between 0.2 and 0.5)
+            const opacity = Math.random() * 0.3 + 0.2;
+            
+            // Random rotation
+            const rotation = Math.random() * 360;
+            
+            // Random animation delay
+            const delay = Math.random() * 10;
+            
+            sorry.textContent = 'SORRY';
+            sorry.style.left = x + '%';
+            sorry.style.top = y + '%';
+            sorry.style.fontSize = size + 'px';
+            sorry.style.opacity = opacity;
+            sorry.style.transform = `rotate(${rotation}deg)`;
+            sorry.style.animation = `floatBg ${8 + Math.random() * 12}s infinite ease-in-out ${delay}s`;
+            
+            container.appendChild(sorry);
+        }
+    </script>
+</body>
+</html>
